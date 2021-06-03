@@ -1,7 +1,7 @@
 #ifndef DAD_DISPLAY_H
 #define DAD_DISPLAY_H
 
-#include "segment_display.h"
+#include "../matezzzz-arduino-library/segment_display.h"
 
 
 
@@ -10,7 +10,7 @@ constexpr uint8_t dice_sizes[]{4, 6, 8, 10, 12, 20, 100};
 constexpr uint8_t dice_count = 7;
 
 
-class DiceSegmentDisplay : public NumberSegmentDisplay{
+class DiceSegmentDisplay : public NumberSegmentDisplay<>{
   uint8_t throw_count;
   uint8_t dice_i;
 public:
