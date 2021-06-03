@@ -25,6 +25,10 @@ public:
     dice_i = (dice_i + 1) % dice_count;
     updateConfigState();
   }
+  void generateNumber(uint16_t rand_seed){
+    randomSeed(rand_seed);
+    generateNumber();
+  }
   void generateNumber(){
     uint16_t n = 0;
     for (int i = 0; i < throw_count; i++){
