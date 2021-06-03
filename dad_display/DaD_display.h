@@ -4,8 +4,9 @@
 #include "../matezzzz-arduino-library/segment_display.h"
 
 
-
+//all dice types - what will be displayed on the segment display to represent this size
 constexpr uint8_t dice_types[][2]{{4, DIGIT_NONE}, {6, DIGIT_NONE}, {8, DIGIT_NONE}, {1, 0}, {1, 2}, {2, 0}, {0, 0}};
+//respective dice sizes
 constexpr uint8_t dice_sizes[]{4, 6, 8, 10, 12, 20, 100};
 constexpr uint8_t dice_count = 7;
 
@@ -37,6 +38,7 @@ public:
     setNumber(n);
   }
 private:
+  //update segments to match current configuration
   void updateConfigState(){
     setSegments(throw_count, DIGIT_d, dice_types[dice_i][0], dice_types[dice_i][1]);
   }

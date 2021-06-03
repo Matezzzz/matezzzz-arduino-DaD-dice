@@ -4,14 +4,19 @@
 #include "dad_display/DaD_display.h"
 
 
-
+//Holds time since last press down
 class TimedEventButton : public EventButton{
   Stopwatch<> time_pressed;
 public:
   TimedEventButton(uint8_t pin) : EventButton(pin)
   {}
+  void init(){
+    EventButton::init();
+    time_pressed.init();
+  }
   void update(){
     EventButton::update();
+    //if button was pressed, reset the timer
     if (pressEvent()) time_pressed.reset();
   }
   uint16_t timeSinceLastPress(){
