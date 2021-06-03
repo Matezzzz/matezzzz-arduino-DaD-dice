@@ -1,0 +1,3 @@
+[submodule "matezzzz-arduino-library"]
+	path = matezzzz-arduino-library
+	url = https://github.com/Matezzzz/matezzzz-arduino-library
